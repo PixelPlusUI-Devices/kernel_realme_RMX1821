@@ -1344,7 +1344,7 @@ int himax_input_register(struct himax_ts_data *ts)
 	set_bit(KEY_POWER, ts->input_dev->keybit);
 #endif
 #if defined(HX_SMART_WAKEUP)
-	set_bit(KEY_F4, ts->input_dev->keybit);
+	set_bit(KEY_WAKEUP, ts->input_dev->keybit);
 	set_bit(KEY_CUST_01, ts->input_dev->keybit);
 	set_bit(KEY_CUST_02, ts->input_dev->keybit);
 	set_bit(KEY_CUST_03, ts->input_dev->keybit);
@@ -1761,7 +1761,7 @@ static void himax_wake_event_report(void)
 		I("%s: Entering! \n", __func__);
 
 #if 1
-	KEY_EVENT = KEY_F4;
+	KEY_EVENT = KEY_WAKEUP;
 #else
 	switch (ret_event) {
 	case EV_GESTURE_PWR:
